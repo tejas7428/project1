@@ -1,27 +1,10 @@
 ---
-import Footer from "../components/Footer.astro";
-import Header from "../components/header.astro";
-import "../styles/global.css";
-const pagetitle = "Home Page";
+import BaseLayout from '../layouts/BaseLayout.astro';
+const {pageTitle} = Astro.props;
+import Greeting from '../components/Greeting';
 ---
+<BaseLayout> pageTitle={pageTitle}
+  <h2>My awesome blog subtitle</h2>
+      <Greeting client:load messages={["Hej", "Hallo", "Hola", "Habari"]} />
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{pagetitle}</title>
-	</head>
-	<body>
-		<Header />
-
-		<h1>{pagetitle}</h1>
-		<h2>... and my new Astro site!</h2>
-		<h1>My Astro site😎😎</h1>
-		<Footer />
-		<script>
-			import "../script/menu.js";
-		</script>
-	</body>
-</html>
+</BaseLayout>

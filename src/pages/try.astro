@@ -1,0 +1,14 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+const {pageTitle} = Astro.props;
+---
+<BaseLayout> pageTitle={pageTitle}
+    <h1>this is the trial page i created</h1>
+</BaseLayout>
+<style>
+    h1{
+        color :green;
+        font-size:4rem;
+        text-transfrom:lowercase;
+    }
+</style>
